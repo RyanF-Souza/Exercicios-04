@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Revenda de veículos JS</h1>
+    <hr>
+    <p>
+        Veículo:
+        <input type="text" id="inVeiculo">
+    </p>
+    <p>
+        Preço R$:
+        <input type="number" id="inPreco">
+    </p>
+    <p>
+        <input type="button" id="btnPromocao" value="Ver Promoção">
+    </p>
+    <p id="outVeiculo" class=""></p>
+    <p id="outEntrada" class=""></p>
+    <p id="outParcelas" class=""></p>
+
+    <script>
+        function promocao(){
+            document.getElementById('outVeiculo').textContent=('Veículo '+document.getElementById('inVeiculo').value)
+            document.getElementById('outEntrada').textContent=('Entrada de R$ '+(document.getElementById('inPreco').value/2).toFixed(2))
+            document.getElementById('outParcelas').textContent=('12 x R$ '+((document.getElementById('inPreco').value/2)/12).toFixed(2))
+        }
+
+        document.getElementById('btnPromocao').addEventListener('click',promocao)
+    </script>
+</body>
+</html>
